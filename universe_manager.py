@@ -63,7 +63,7 @@ def add_companies(additions, testing=False):
   in real-time. 
     
   args: 
-    additions (set): The tickers and GICS sub-sector of companies recently 
+    additions (set): The tickers and GICS sub-industry of companies recently 
     added to the S&P 500. 
     testing (bool): Whether or not we are testing, determing whether or not to 
     use the testing database.
