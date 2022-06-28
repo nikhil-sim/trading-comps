@@ -15,7 +15,7 @@ def get_base_data(ticker, testing=False):
   returns:
     base_data (list): A list of tuples featuring the ticker, shares 
     outstanding, net debt, revenue, ebitda, and net income of all companies that 
-    are a part of the same GICS sub-sector as 'ticker.'
+    are a part of the same GICS sub-industry as 'ticker.'
   """
 
 def get_price_data(tickers):
@@ -74,15 +74,27 @@ def calculate_ivps(ticker, model_data, statistics):
     ivps (float): The implied value per share of the company being modeled.
   """
 
-def model(ticker):
+def model(ticker, complete=False):
   """
-  Creates a trading comparison model for the company associated with 'ticker.'
+  Creates a trading comparison model for the company associated with 'ticker.' 
+  If 'complete,' then all the data for the model is returned. Otherwise, just 
+  the central point on whether the company is undervalued is returned.
   
   args:
     ticker (str): The ticker for the company being modeled.
   
-  return:
+  returns (complete=True):
+    base_data (list): A list of tuples featuring the ticker, shares 
+    outstanding, net debt, revenue, ebitda, and net income of all companies that 
+    are a part of the same GICS sub-industry as 'ticker.'
+    price_data (dict): A dict mapping ticker to share price. 
+    model_data (list): A list of tuples featuring the ev/revenue, ev/ebitda, and 
+    p/e values of the companies in this model.
+    statistics (list): A list of tuples featuring the statistics mentioned in 
+    the docstring for ev/revenue, ev/ebitda, and p/e values.
     ivps (float): The implied value per share of the company being modeled.
+    
+  returns (complete=False)
     undervalued (bool): Whether or not the company being modeled is undervalued 
     per the model generated.
   """
