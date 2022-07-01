@@ -1,6 +1,8 @@
 """
 Tests to make sure that the webpage being scraped and the APIs being 
-used to fetch data maintain the structure that is expected. 
+used to fetch data maintain the structure that is expected. A successful test
+involves printing the following: 'Webpage verification successful.' and 
+'API verifcation successful.', each on their own line.  
 """
 import requests
 import sys
